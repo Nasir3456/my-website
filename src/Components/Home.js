@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowRight , faBars ,faTimes} from '@fortawesome/free-solid-svg-icons'
+import { faDownload , faBars ,faTimes} from '@fortawesome/free-solid-svg-icons'
+import resume from 'C:/Users/Admin/Desktop/portfolio/src/projectImage/Resume.pdf'
 
 const Home = () => {
     const [translat, settranslat] = useState('')
@@ -30,7 +31,7 @@ const Home = () => {
             <div className='home-sec-left'>
                 <h1>Hello, I'm <span>Nasir Multani</span></h1>
                 <p>A full-stack web developer,<br/> Wrodpress developer, and react.js developer.</p>
-                <a href='#Service' className='home-btn'>Learn More  <span> <FontAwesomeIcon icon={faArrowRight} className='ic' /></span></a>
+                <a href={resume} download='nasir-resume.pdf' className='home-btn'>Learn More  <span> <FontAwesomeIcon icon={faDownload} className='ic' /></span></a>
             </div>
             <div className='home-sec-right'>
             </div>
