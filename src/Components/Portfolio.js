@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import nsr2 from 'C:/Users/Admin/Desktop/portfolio/src/images/nsr2.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDownload ,faCircleCheck } from '@fortawesome/free-solid-svg-icons'
 import Crud from 'C:/Users/Admin/Desktop/portfolio/src/Work/php-crud-main.zip'
@@ -8,18 +7,24 @@ import Counter from 'C:/Users/Admin/Desktop/portfolio/src/Work/react-letter-word
 import Shopping from 'C:/Users/Admin/Desktop/portfolio/src/Work/react-shoppingCart-main.zip'
 import Todo from 'C:/Users/Admin/Desktop/portfolio/src/Work/react-TodoList-main.zip'
 import Task from 'C:/Users/Admin/Desktop/portfolio/src/Work/TaskManager-main.zip'
+import Stock from 'C:/Users/Admin/Desktop/portfolio/src/Work/stock-management-main.zip'
+import Mywebsite from 'C:/Users/Admin/Desktop/portfolio/src/Work/my-website-main.zip'
 import php from 'C:/Users/Admin/Desktop/portfolio/src/projectImage/php.jpeg'
 import quiz from 'C:/Users/Admin/Desktop/portfolio/src/projectImage/quiz.jpeg'
 import shopping from 'C:/Users/Admin/Desktop/portfolio/src/projectImage/shopping.jpeg'
 import task from 'C:/Users/Admin/Desktop/portfolio/src/projectImage/task.jpeg'
 import todo from 'C:/Users/Admin/Desktop/portfolio/src/projectImage/todo.png'
 import word from 'C:/Users/Admin/Desktop/portfolio/src/projectImage/word.jpeg'
+import stock from 'C:/Users/Admin/Desktop/portfolio/src/projectImage/stock.jpeg'
+import mywebsite from 'C:/Users/Admin/Desktop/portfolio/src/projectImage/mywebsite.png'
 
 
 
 const Portfolio = () => {
     const [arr, setarr] = useState([
         [php,'php crud', 'This project is a user application where you can add, delete, and update the user.', Crud,false],
+        [stock,'Inventry Management', 'This project is a stock management application where you can maintain your inventry items.', Stock,false],
+        [mywebsite,'My portfolio', 'This is a website you are currently seeing ,it is a React project .', Mywebsite,false],
         [quiz,'quiz game', 'This application is created in React, and after completing the game, it will show your marks.', Quiz,false],
         [word,'word and letter counter', 'This is a React project to count letters and words in real-time.', Counter,false],
         [shopping,'shopping cart', 'This is a React-based shopping cart application where you can add items and view the total.', Shopping,false],
