@@ -638,6 +638,10 @@ nav ul li a:hover::before{
     padding: 1rem;
   }
 
+  .social a{
+    font-size: 2rem;
+  }
+
   .leftContact{
     width: 100%;
     text-align: center;

@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faDownload , faBars ,faTimes} from '@fortawesome/free-solid-svg-icons'
+import { faDownload , faBars ,faTimes ,faCircleCheck} from '@fortawesome/free-solid-svg-icons'
 import resume from 'C:/Users/Admin/Desktop/portfolio/src/projectImage/Resume.pdf'
 
 const Home = () => {
     const [translat, settranslat] = useState('')
+    const [resumeIcon, setresumeIcon] = useState(<FontAwesomeIcon icon={faDownload} className='ic' />)
     const [icon, seticon] = useState(<FontAwesomeIcon icon={faBars} />)
     const toggleMenu = () => {
         translat == '' ? settranslat('showMenu') : settranslat('')
@@ -31,7 +32,9 @@ const Home = () => {
             <div className='home-sec-left'>
                 <h1>Hello, I'm <span>Nasir Multani</span></h1>
                 <p>A full-stack web developer,<br/> Wrodpress developer, and react.js developer.</p>
-                <a href={resume} download='nasir-resume.pdf' className='home-btn'>Learn More  <span> <FontAwesomeIcon icon={faDownload} className='ic' /></span></a>
+                <a href={resume} download='nasir-resume.pdf' className='home-btn' onClick={()=>{
+                    setresumeIcon(<FontAwesomeIcon icon={faCircleCheck} />)
+                }}>Resume  <span> <FontAwesomeIcon icon={faDownload} className='ic' /></span></a>
             </div>
             <div className='home-sec-right'>
             </div>
