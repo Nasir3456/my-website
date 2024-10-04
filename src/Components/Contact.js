@@ -2,6 +2,8 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaperPlane , faPhone} from '@fortawesome/free-solid-svg-icons'
 import { faInstagram, faGithub, faWhatsapp , faLinkedin} from '@fortawesome/free-brands-svg-icons';
+import gsap from 'gsap'
+import { useGSAP } from '@gsap/react'
 
 const Contact = () => {
     const scriptURL = 'https://script.google.com/macros/s/AKfycbwlQcoLd9TX8SstrnKxv2jbCkpbdZfEFxvqcLM530Ed4zuXBK7fLiNiD3c5f-2DfHA-/exec'
@@ -14,6 +16,15 @@ const Contact = () => {
       )
       .catch(error => console.error('Error!', error.message))
   }
+
+  useGSAP(function () {
+        
+    gsap.from('.leftContact h1 , .leftContact p , .social , .rightContact input , .rightContact textarea , .rightContact button',{
+        y:200,
+        duration:1
+    })
+    })
+
   return (
     <div className='contactContainer'>
         <div className='leftContact'>

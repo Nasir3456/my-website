@@ -17,10 +17,21 @@ import todo from 'C:/Users/Admin/Desktop/portfolio/src/projectImage/todo.png'
 import word from 'C:/Users/Admin/Desktop/portfolio/src/projectImage/word.jpeg'
 import stock from 'C:/Users/Admin/Desktop/portfolio/src/projectImage/stock.jpeg'
 import mywebsite from 'C:/Users/Admin/Desktop/portfolio/src/projectImage/mywebsite.png'
-
+import gsap from 'gsap'
+import { useGSAP } from '@gsap/react'
 
 
 const Portfolio = () => {
+
+    useGSAP(function () {
+        
+        gsap.from('.portfolioContainer h1 , .workMain ',{
+            y:200,
+            duration:1
+        })
+    })
+
+
     const [arr, setarr] = useState([
         [php,'php crud', 'This project is a user application where you can add, delete, and update the user.', Crud,false],
         [stock,'Inventry Management', 'This project is a stock management application where you can maintain your inventry items.', Stock,false],

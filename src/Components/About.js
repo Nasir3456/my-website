@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import nsr2 from 'C:/Users/Admin/Desktop/portfolio/src/images/nsr2.png'
 import html from 'C:/Users/Admin/Desktop/portfolio/src/images/html.png'
 import css from 'C:/Users/Admin/Desktop/portfolio/src/images/css.png'
@@ -8,8 +8,19 @@ import php from 'C:/Users/Admin/Desktop/portfolio/src/images/php.png'
 import mysql from 'C:/Users/Admin/Desktop/portfolio/src/images/mysql.png'
 import wordpress from 'C:/Users/Admin/Desktop/portfolio/src/images/wordpress.png'
 import theme from 'C:/Users/Admin/Desktop/portfolio/src/images/theme.png'
+import gsap from 'gsap'
+import { useGSAP } from '@gsap/react'
 
 const About = () => {
+      
+        useGSAP(function () {
+        
+            gsap.from('.aboutLeft , .aboutRight h1 , .aboutRight p ,.rightShowase ',{
+                y:200,
+                duration:1
+            })
+        })
+
     const [idx, setidx] = useState(0)
     let skill = [
             [
@@ -31,7 +42,7 @@ const About = () => {
   return (
     <div className='aboutContainer'>
         <div className='aboutLeft'>
-            <img src={nsr2}/>
+            <img src={nsr2} />
         </div>
         <div className='aboutRight'>
             <h1>About Me</h1>

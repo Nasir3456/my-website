@@ -2,8 +2,20 @@ import React from 'react'
 import react from 'C:/Users/Admin/Desktop/portfolio/src/images/react.png'
 import php from 'C:/Users/Admin/Desktop/portfolio/src/images/php.png'
 import wordpress from 'C:/Users/Admin/Desktop/portfolio/src/images/wordpress.png'
+import gsap from 'gsap'
+import { useGSAP } from '@gsap/react'
 
 const Service = () => {
+
+    useGSAP(function () {
+        
+        gsap.from('.serviceContainer h1 , .serviceMain',{
+            y:200,
+            duration:1
+        })
+    })
+
+
     let service = [
         [
             react,
