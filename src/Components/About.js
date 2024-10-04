@@ -10,17 +10,46 @@ import wordpress from 'C:/Users/Admin/Desktop/portfolio/src/images/wordpress.png
 import theme from 'C:/Users/Admin/Desktop/portfolio/src/images/theme.png'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 const About = () => {
-      
-        useGSAP(function () {
-        
-            gsap.from('.aboutLeft , .aboutRight h1 , .aboutRight p ,.rightShowase ',{
-                y:200,
-                duration:1,
-                delay:1
-            })
+
+    useGSAP(function () {
+        gsap.registerPlugin(ScrollTrigger)
+        gsap.from(".aboutLeft ",{
+            x:-400,
+            duration:1,
+            scrollTrigger:{
+                trigger:".aboutLeft ",
+                scroller:"body",
+                start:"top 90%"
+            }
         })
+        gsap.from(".aboutRight h1 ",{
+            y:100,
+            duration:1,
+            scrollTrigger:{
+                trigger:".aboutRight h1 ",
+                scroller:"body"
+            }
+        })
+        gsap.from(".aboutRight p ",{
+            scale:0,
+            duration:2,
+            scrollTrigger:{
+                trigger:".aboutRight p ",
+                scroller:"body"
+            }
+        })
+        gsap.from(".display ",{
+            opacity:-1,
+            duration:1,
+            scrollTrigger:{
+                trigger:".display ",
+                scroller:"body"
+            }
+        })
+    })
 
     const [idx, setidx] = useState(0)
     let skill = [

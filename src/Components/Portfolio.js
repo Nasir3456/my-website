@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDownload ,faCircleCheck } from '@fortawesome/free-solid-svg-icons'
 import Crud from 'C:/Users/Admin/Desktop/portfolio/src/Work/php-crud-main.zip'
@@ -19,19 +19,33 @@ import stock from 'C:/Users/Admin/Desktop/portfolio/src/projectImage/stock.jpeg'
 import mywebsite from 'C:/Users/Admin/Desktop/portfolio/src/projectImage/mywebsite.png'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+
 
 
 const Portfolio = () => {
 
-    useGSAP(function () {
-        
-        gsap.from('.portfolioContainer h1 , .workMain ',{
-            y:200,
+    useGSAP(function(){
+        gsap.registerPlugin(ScrollTrigger)
+        gsap.from(".portfolioContainer h1",{
+            y:100,
             duration:1,
-            delay:1
+            scrollTrigger:{
+                trigger:".portfolioContainer h1",
+                scroller:"body"
+            }
+        })
+        gsap.from(".workMain",{
+            y:100,
+            duration:1,
+            scrollTrigger:{
+                trigger:".workMain",
+                scroller:"body",
+                start:"top 85%"
+            }
         })
     })
-
 
     const [arr, setarr] = useState([
         [php,'php crud', 'This project is a user application where you can add, delete, and update the user.', Crud,false],

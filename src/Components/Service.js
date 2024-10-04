@@ -4,19 +4,48 @@ import php from 'C:/Users/Admin/Desktop/portfolio/src/images/php.png'
 import wordpress from 'C:/Users/Admin/Desktop/portfolio/src/images/wordpress.png'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
 
 const Service = () => {
 
     useGSAP(function () {
-        
-        gsap.from('.serviceContainer h1 , .serviceMain',{
-            y:200,
+        gsap.registerPlugin(ScrollTrigger)
+        gsap.from(".serviceContainer h1",{
+            y:100,
             duration:1,
-            delay:1
+            scrollTrigger:{
+                trigger:".serviceContainer h1 ",
+                scroller:"body"
+            }
         })
+        gsap.from(".serviceSub:nth-child(1)",{
+            x:-500,
+            duration:1,
+            scrollTrigger:{
+                trigger:".serviceSub:nth-child(1) ",
+                scroller:"body"
+            }
+        })
+        gsap.from(".serviceSub:nth-child(2)",{
+            y:100,
+            duration:1,
+            scrollTrigger:{
+                trigger:".serviceSub:nth-child(2) ",
+                scroller:"body"
+            }
+        })
+        gsap.from(".serviceSub:nth-child(3)",{
+            x:500,
+            duration:1,
+            scrollTrigger:{
+                trigger:".serviceSub:nth-child(3) ",
+                scroller:"body"
+            }
+        })
+
     })
-
-
+    
     let service = [
         [
             react,

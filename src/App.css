@@ -529,6 +529,9 @@ nav ul li a:hover::before{
     transition: all .5s;
     transform: translateX(150%);
   }
+
+ 
+
   .mobileMenu{
     display: block;
     position: absolute;

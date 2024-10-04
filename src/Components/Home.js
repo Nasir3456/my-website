@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDownload , faBars ,faTimes ,faCircleCheck} from '@fortawesome/free-solid-svg-icons'
 import resume from 'C:/Users/Admin/Desktop/portfolio/src/projectImage/Resume.pdf'
+import gsap from 'gsap'
+import { useGSAP } from '@gsap/react'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 const Home = () => {
     const [translat, settranslat] = useState('')
@@ -11,6 +14,31 @@ const Home = () => {
         translat == '' ? settranslat('showMenu') : settranslat('')
         seticon(translat == ''? <FontAwesomeIcon icon={faTimes} /> : <FontAwesomeIcon icon={faBars} />)
     }
+
+    useGSAP(function(){
+        gsap.registerPlugin(ScrollTrigger)
+        gsap.from(".home-sec-left",{
+            x:-500,
+            duration:1,
+            scrollTrigger:{
+                trigger:'.home-sec-left',
+                scroller:"body",
+    
+            }
+        })
+        gsap.from(".home-sec-right",{
+            opacity:-1,
+            duration:1,
+            scrollTrigger:{
+                trigger:'.home-sec-right',
+                scroller:"body",
+    
+            }
+        })
+    })
+
+    
+
   return (
     <div className='home-container'>
         <nav>
