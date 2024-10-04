@@ -61,14 +61,7 @@ const Contact = () => {
             scroller:"body"
         }
     })
-    gsap.from("form button",{
-        y:100,
-        duration:1,
-        scrollTrigger:{
-            trigger:"form button",
-            scroller:"body"
-        }
-    })
+    
   })
 
  
