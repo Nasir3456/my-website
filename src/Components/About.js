@@ -17,7 +17,8 @@ const About = () => {
         
             gsap.from('.aboutLeft , .aboutRight h1 , .aboutRight p ,.rightShowase ',{
                 y:200,
-                duration:1
+                duration:1,
+                delay:1
             })
         })
 

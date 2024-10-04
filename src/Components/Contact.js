@@ -21,7 +21,8 @@ const Contact = () => {
         
     gsap.from('.leftContact h1 , .leftContact p , .social , .rightContact input , .rightContact textarea , .rightContact button',{
         y:200,
-        duration:1
+        duration:1,
+        delay:1
     })
     })
 

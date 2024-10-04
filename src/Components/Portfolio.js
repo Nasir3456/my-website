@@ -27,7 +27,8 @@ const Portfolio = () => {
         
         gsap.from('.portfolioContainer h1 , .workMain ',{
             y:200,
-            duration:1
+            duration:1,
+            delay:1
         })
     })
 

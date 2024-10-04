@@ -11,7 +11,8 @@ const Service = () => {
         
         gsap.from('.serviceContainer h1 , .serviceMain',{
             y:200,
-            duration:1
+            duration:1,
+            delay:1
         })
     })
 
